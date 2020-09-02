@@ -1,0 +1,8 @@
+<h2>most comments posts</h2>
+<ul>
+    {% for post in mcp %}
+        <li>
+            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+        </li>
+    {% endfor %}
+</ul>

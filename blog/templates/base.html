@@ -1,3 +1,4 @@
+{% load blog_tags %}
 {% load static %}
 
 
@@ -15,6 +16,9 @@
     </div>
     <div id='sidebar'>
         <h2>This is my blog</h2>
+        <p>I have written total {% total_posts %} posts</p>
+        {% show_latest_posts 3 %}
+        {% show_most_commented_posts 3 %}
     </div>
 </body>
 </html>
