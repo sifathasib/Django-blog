@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Share{% endblock %}
+
+{% block content %}
+    {% if sent %}
+        <h1>Your Email has been sent to {{ email_form.cleaned_data.to }}</h1>
+    {% else %}
+        <h1>Share post via email</h1>
+        <form method="post">
+            {{ email_form.as_p }}
+            {% csrf_token %}
+            <input type="submit" value="send e-mail">
+        </form>
+    {% endif %}
+{% endblock %}
